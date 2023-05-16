@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400&family=Secular+One&display=swap');
+
+/*index*/
+.body{
+    background-color: #0F224A;
+}
+
+.header {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    height: 150px;
+}
+
+.header_contenido{
+    height: 100%;
+    width: 150px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header_logo{
+    height:150px;
+}
+
+.bienvenida{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    color: white;
+    font-family: 'Secular One', sans-serif;
+}
+
+.subtitulo{
+    color: white;
+}
+
+.material-symbols-outlined{
+color: white;
+}
+
+.pokeespacio{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
