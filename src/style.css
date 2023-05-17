@@ -69,4 +69,86 @@ color: white;
     50%{top: 0}
     75%{top: 55px}
     100%{top: 0}
+
 }
+
+/*Home*/
+.buscador{
+    display: flex;
+    justify-content: center;
+}
+
+.input_nombre{
+    height: 40px;
+    width: 500px;
+    border-radius: 20px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight:bold;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.filtros{
+    align-items: center;
+    justify-items: center;
+    
+}
+
+.filtro_uno{
+    margin: 0;
+    margin-top: 30px;
+}
+
+.filtros_campo_uno{
+    height: 40px;
+    width: 300px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight:bold;
+    font-size: 1.8rem;
+}
+
+.filtro_dos{
+    margin: 0;
+    margin-top: 30px;
+}
+
+.filtros_campo_dos{
+    height: 40px;
+    width: 300px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight:bold;
+    font-size: 1.8rem;
+}
+
+@media only screen and (min-width: 768px){
+    .filtros {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .filtro_uno{
+        margin: 0px 50px 0px 50px;
+    }
+    .filtro_dos{
+        margin: 0px 50px 0px 50px; 
+    }
+    .filtros_campo_uno{
+        font-size: 1.2rem;
+    }
+    .filtros_campo_dos{
+        font-size: 1.2rem; 
+    }
+    .input_nombre{
+        font-size: 1.2rem;
+    }
+}
+
+/*colores opciones*/
+/*.grass{
+background: #78C850;
+cursor: pointer;
+}*/
+
+
+
