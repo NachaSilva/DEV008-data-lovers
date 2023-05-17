@@ -11,12 +11,48 @@
     <header class="header">
       <div class="header_contenido">
         <a href="index.html">
-          <img class="header_logo" src="img/pokemongo.png" alt="Logotipo" />
+          <img class="header_logo" src="img/logopokemonweb.png" alt="Logotipo" />
         </a>
       </div>
     </header>
    
+    <div class="buscador">
+      <input type="text" class="input_nombre" placeholder="¿Qué Pokemon buscas?"> 
     </div>
+
+    <div class="filtros">
+    <form class="filtro_uno">
+      <select class="filtros_campo_uno">
+        <option disabled selected>Tipo de Pokemon</option>
+        <option class="grass">grass</option>
+        <option>poison</option>
+        <option>fire</option>
+        <option>flying</option>
+        <option>water</option>
+        <option>bug</option>
+        <option>rock</option>
+        <option>normal</option>
+        <option>psychic</option>
+        <option>ice</option>
+        <option>electric</option>
+      </select>
+     </form>
+
+   <form class="filtro_dos">
+    <select class="filtros_campo_dos">
+      <option disabled selected>Puntos de Combate</option>
+      <option>De Mayor a Menor</option>
+      <option>De Menor a Mayor</option>
+    </select>
+  </div>
+   </form>
+
+   <div id="datos"></div>
+
+   <div class="pokemon-container">
+
+   </div>
+
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
