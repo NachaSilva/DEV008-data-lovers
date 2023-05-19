@@ -121,8 +121,12 @@ color: white;
 
 /*cards*/
 #cartaPokemon{
+    width: 350px;
+    height: 450px;
     border: black;
     background-color: white;
+    padding: 5px;
+    border-radius: 20px;
 }
 
 #datos{
@@ -132,10 +136,12 @@ color: white;
 }
 
 #datospokemon{
-    width: 70%;
+    width: 80%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+   /* grid-template-columns: 1fr 1fr 1fr;*/
+   grid-template-columns: repeat(auto-fit, 350px);
     grid-gap: 10px;
+    
 }
 
 #nombrepokemon{
@@ -143,9 +149,10 @@ color: white;
     font-family: 'Secular One', sans-serif;
 }
 
-/*#imagenpokemon{
-    justify-content: center;
-}*/
+#imagenpokemon{
+    display: block;
+    margin: auto;
+}
 #tipopokemon{
     text-align: center;
     font-family: 'Red Hat Display', sans-serif;
