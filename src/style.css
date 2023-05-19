@@ -120,6 +120,45 @@ color: white;
     font-size: 1.8rem;
 }
 
+/*cards*/
+#cartaPokemon{
+    border: black;
+    background-color: white;
+}
+
+#datos{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;  
+}
+
+#datospokemon{
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+#nombrepokemon{
+    text-align: center;
+    font-family: 'Secular One', sans-serif;
+}
+
+/*#imagenpokemon{
+    justify-content: center;
+}*/
+#tipopokemon{
+    text-align: center;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 400;
+}
+
+#aboutpokemon{
+    text-align: center; 
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 300;
+}
+
 @media only screen and (min-width: 768px){
     .filtros {
         display: flex;
@@ -149,6 +188,5 @@ color: white;
 background: #78C850;
 cursor: pointer;
 }*/
-
 
 
