@@ -3,8 +3,10 @@ import data from "./data/pokemon/pokemon.js";
 
 let pokemonContainer = document.getElementById("datospokemon");
 
-function pokemonCardsCreator() {
-  for (let pokemon of data.pokemon) {
+function pokemonCardsCreator(pokemonesADibujar) {
+  pokemonContainer.innerHTML = ""; //reemplazar el contenido de un elemento
+
+  for (let pokemon of pokemonesADibujar) {
     let card = document.createElement("div");
     card.setAttribute("id", "cartaPokemon");
     card.innerHTML = `<h3 id="nombrepokemon">${pokemon.name}</h3>
@@ -15,16 +17,15 @@ function pokemonCardsCreator() {
     pokemonContainer.append(card);
   }
 }
-pokemonCardsCreator();
+pokemonCardsCreator(data.pokemon);
 
 const userSelection = document.getElementById("selectOptions");
 
 userSelection.addEventListener("change", function () {
   let optionsType = userSelection.value;
+  let filteredData = filterTipo(data.pokemon, optionsType);
 
-  console.log(optionsType);
-  return optionsType;
+  pokemonCardsCreator(filteredData);
+  
+  console.log(filterTipo(data.pokemon, optionsType));
 });
-//let optionsType = optionsType;
-
-//console.log(filterTipo(data.pokemon, optionsType));
