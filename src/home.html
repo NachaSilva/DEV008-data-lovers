@@ -5,51 +5,62 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="/src/img/Group4.png" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
   </head>
   <body class="body">
     <header class="header">
       <div class="header_contenido">
         <a href="index.html">
-          <img class="header_logo" src="img/logopokemonweb.png" alt="Logotipo" />
+          <img
+            class="header_logo"
+            src="img/logopokemonweb.png"
+            alt="Logotipo"
+          />
         </a>
       </div>
     </header>
-   
+
     <div class="buscador">
-      <input type="text" class="input_nombre" placeholder="¿Qué Pokemon buscas?"> 
+      <input
+        type="text"
+        class="input_nombre"
+        placeholder="¿Qué Pokemon buscas?"
+      />
     </div>
 
     <div class="filtros">
-    <form class="filtro_uno" id="form">
-      <select class="filtros_campo_uno" id="selectOptions">
-        <option value="" hidden>Tipo de Pokemon</option>
-        <option class="grass" value="grass">Grass</option>
-        <option value="poison">Poison</option>
-        <option value="fire">Fire</option>
-        <option value="flying">Flying</option>
-        <option value="water">Water</option>
-        <option value="bug">Bug</option>
-        <option value="rock">Rock</option>
-        <option value="normal">Normal</option>
-        <option value="psychic">Psychic</option>
-        <option value="ice">Ice</option>
-        <option value="electric">Electric</option>
-      </select>
-     </form>
+      <form class="filtro_uno" id="form">
+        <select class="filtros_campo_uno" id="selectOptions">
+          <option disabled selected>Tipo de Pokemon</option>
+          <option class="grass" value="grass">Grass</option>
+          <option value="poison">Poison</option>
+          <option value="fire">Fire</option>
+          <option value="flying">Flying</option>
+          <option value="water">Water</option>
+          <option value="bug">Bug</option>
+          <option value="rock">Rock</option>
+          <option value="normal">Normal</option>
+          <option value="psychic">Psychic</option>
+          <option value="ice">Ice</option>
+          <option value="electric">Electric</option>
+        </select>
+      </form>
 
-   <form class="filtro_dos">
-    <select class="filtros_campo_dos">
-      <option disabled selected>Puntos de Combate</option>
-      <option>De Mayor a Menor</option>
-      <option>De Menor a Mayor</option>
-    </select>
-  </div>
-   </form>
+      <form class="filtro_dos">
+        <select class="filtros_campo_dos">
+          <option disabled selected>Puntos de Combate</option>
+          <option>De Mayor a Menor</option>
+          <option>De Menor a Mayor</option>
+        </select>
+      </form>
+    </div>
 
-   <div id="datos">
-   <div class="datospokemon" id="datospokemon"></div> 
-   </div>
+    <div id="datos">
+      <div class="datospokemon" id="datospokemon"></div>
+    </div>
 
     <div id="root"></div>
     <script src="main.js" type="module"></script>

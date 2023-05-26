@@ -144,6 +144,10 @@ color: white;
     grid-gap: 10px;
     
 }
+#cpmax{
+    text-align: center;
+    font-family: 'Secular One', sans-serif;
+}
 
 #nombrepokemon{
     text-align: center;

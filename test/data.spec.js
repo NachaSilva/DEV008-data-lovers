@@ -1,16 +1,19 @@
-import { example, anotherExample } from '../src/data.js';
+import { filterTipo, anotherExample } from "../src/data.js";
 
-
-describe('example', () => {
+describe('filterTipo', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filterTipo).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
+  // it('returns `grass`', () => {
+  //   const dataTypes = [
+  //     "grass",
+  //     "poison"
+  //   ]
+  //   const optionsType = filterTipo(dataTypes);
+  //   expect( optionsType ).toEqual("grass");
+  // });
 });
-
 
 describe('anotherExample', () => {
   it('is a function', () => {
