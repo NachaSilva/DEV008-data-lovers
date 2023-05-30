@@ -5,14 +5,30 @@ describe('filterTipo', () => {
     expect(typeof filterTipo).toBe('function');
   });
 
-  // it('returns `grass`', () => {
-  //   const dataTypes = [
-  //     "grass",
-  //     "poison"
-  //   ]
-  //   const optionsType = filterTipo(dataTypes);
-  //   expect( optionsType ).toEqual("grass");
-  // });
+  it('returns `grass`', () => {
+    const dataTypes = [
+      {
+        "type": [
+          "grass",
+          "poison"
+        ],
+      },
+      {
+        "type": [
+          "grass",
+        ],
+      },
+      {
+        "type": [
+          "poison"
+        ],
+      }
+    ]
+    //Comprobar si al menos uno de los objetos en el array tiene la propiedad "type" que contiene el valor "grass". 
+    const optionsType = filterTipo(dataTypes, "grass");
+    //El método some es para iterar sobre los objetos en el array optionsType y comprobar si al menos uno de ellos tiene la propiedad "type" que contiene el valor "grass".
+    expect(optionsType.some(obj => obj.type.includes("grass"))).toBe(true);
+  });
 });
 
 describe('anotherExample', () => {
