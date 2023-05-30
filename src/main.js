@@ -1,4 +1,4 @@
-import { filterTipo } from "./data.js";
+import { filterTipo, sortData } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
 const pokemonContainer = document.getElementById("datospokemon");
@@ -28,6 +28,22 @@ userSelection.addEventListener("change", function () {
   const filteredData = filterTipo(data.pokemon, optionsType);
 
   pokemonCardsCreator(filteredData);
+});
 
-  // console.log(filterTipo(data.pokemon, optionsType));
+const userSelectionOrder = document.getElementById("selectOptionsOrder");
+
+userSelectionOrder.addEventListener("change", function () {
+  const sortBy = "max-cp";
+  //const sortOrder = userSelectionOrder.value;
+  let sortOrder;
+  if (userSelectionOrder.value === "mayor-menor") {
+    sortOrder = "De Mayor a Menor";
+  } else {
+    sortOrder = "De Menor a Mayor";
+  }
+
+  const sortOrderByCp = sortData(data.pokemon, sortBy, sortOrder);
+
+  pokemonCardsCreator(sortOrderByCp);
+  
 });
