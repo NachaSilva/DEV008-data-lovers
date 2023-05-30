@@ -30,7 +30,7 @@ pokemonInput.addEventListener("keyup", (e) => {
 
     document.querySelectorAll(".filtroPokemon").forEach((pokemon) => {
       console.log(pokemon);
-      pokemon.getElementsByTagName("h3").textContent.toLowerCase().includes(e.target.value.toLowerCase())
+      pokemon.getElementsByTagName("h3")[0].textContent.toLowerCase().includes(e.target.value.toLowerCase())
         ? pokemon.classList.remove("datospokemon")
         : pokemon.classList.add("datospokemon");
         
