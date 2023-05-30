@@ -129,6 +129,10 @@ color: white;
     padding: 5px;
     border-radius: 20px;
 }
+.datospokemon{
+    display: none;
+}
+
 
 #datos{
     display: flex;
@@ -178,6 +182,10 @@ color: white;
     border-radius: 20px;
     height: 30px;
 }
+
+
+
+
 
 @media only screen and (min-width: 768px){
     .filtros {

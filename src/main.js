@@ -9,8 +9,9 @@ function pokemonCardsCreator(pokemonesADibujar) {
   for (const pokemon of pokemonesADibujar) {
     const card = document.createElement("div");
     card.setAttribute("id", "cartaPokemon");
+    card.setAttribute("class", "filtroPokemon");
     card.innerHTML = `<p id="cpmax">${"MAX-CP: " + pokemon.stats["max-cp"]}</p>
-    <h3 id="nombrepokemon">${pokemon.name}</h3>
+    <h3 class="nombrePokemonBusqueda" id="nombrepokemon">${pokemon.name}</h3>
     <img id="imagenpokemon" src="${pokemon.img}"/> 
     <p id="tipopokemon">${pokemon.type}</p>
     <p id="aboutpokemon">${pokemon.about}</p>
@@ -20,6 +21,22 @@ function pokemonCardsCreator(pokemonesADibujar) {
   }
 }
 pokemonCardsCreator(data.pokemon);
+
+const pokemonInput = document.getElementById("input");
+
+pokemonInput.addEventListener("keyup", (e) => {
+  if (e.target.matches("#input")) {
+    if (e.key === "Escape") e.target.value = "";
+
+    document.querySelectorAll(".filtroPokemon").forEach((pokemon) => {
+      console.log(pokemon);
+      pokemon.getElementsByTagName("h3").textContent.toLowerCase().includes(e.target.value.toLowerCase())
+        ? pokemon.classList.remove("datospokemon")
+        : pokemon.classList.add("datospokemon");
+        
+    });
+  }
+});
 
 const userSelection = document.getElementById("selectOptions");
 
@@ -45,5 +62,4 @@ userSelectionOrder.addEventListener("change", function () {
   const sortOrderByCp = sortData(data.pokemon, sortBy, sortOrder);
 
   pokemonCardsCreator(sortOrderByCp);
-  
 });
