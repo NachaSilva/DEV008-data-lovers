@@ -1,6 +1,7 @@
 import { filterTipo, sortData } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
+//Mostrar Data
 const pokemonContainer = document.getElementById("datospokemon");
 
 function pokemonCardsCreator(pokemonesADibujar) {
@@ -15,38 +16,47 @@ function pokemonCardsCreator(pokemonesADibujar) {
     <img id="imagenpokemon" src="${pokemon.img}"/> 
     <p id="tipopokemon">${pokemon.type}</p>
     <p id="aboutpokemon">${pokemon.about}</p>
-    <button id="buttonMoreInfo">Estadísticas</button>`;
+    <button class="buttonMore" id="buttonMoreInfo">Estadísticas</button>`;
+
+    const button = card.querySelector(".buttonMore");
+    button.setAttribute("class", "buttonMore buttonMore-" + pokemon.num);
 
     pokemonContainer.append(card);
   }
 }
 pokemonCardsCreator(data.pokemon);
 
+//Input de búsqueda
 const pokemonInput = document.getElementById("input");
 
 pokemonInput.addEventListener("keyup", (e) => {
   if (e.target.matches("#input")) {
     if (e.key === "Escape") e.target.value = "";
-
     document.querySelectorAll(".filtroPokemon").forEach((pokemon) => {
-      console.log(pokemon);
-      pokemon.getElementsByTagName("h3")[0].textContent.toLowerCase().includes(e.target.value.toLowerCase())
+      //console.log(pokemon.getElementsByTagName("h3")[0].textContent.toLowerCase().includes(e.target.value.toLowerCase())? pokemon.classList.remove("datospokemon") : pokemon.classList.add("datospokemon"))
+      pokemon
+        .getElementsByTagName("h3")[0]
+        .textContent.toLowerCase()
+        .includes(e.target.value.toLowerCase())
         ? pokemon.classList.remove("datospokemon")
         : pokemon.classList.add("datospokemon");
-        
     });
   }
 });
 
+//Filtrar por tipo de Pokemon
 const userSelection = document.getElementById("selectOptions");
 
 userSelection.addEventListener("change", function () {
   const optionsType = userSelection.value;
   const filteredData = filterTipo(data.pokemon, optionsType);
 
+  console.log('filteredData', filteredData);
+
   pokemonCardsCreator(filteredData);
 });
 
+//Filtrar por orden CP
 const userSelectionOrder = document.getElementById("selectOptionsOrder");
 
 userSelectionOrder.addEventListener("change", function () {
@@ -62,4 +72,46 @@ userSelectionOrder.addEventListener("change", function () {
   const sortOrderByCp = sortData(data.pokemon, sortBy, sortOrder);
 
   pokemonCardsCreator(sortOrderByCp);
+});
+
+//Mostrar Data Modal
+const dataModalPokemon = document.getElementById("dataModal");
+
+function pokemonModalCreator(pokemonesModalDibujar) {
+  dataModalPokemon.innerHTML = "";
+
+  for (const pokemon of pokemonesModalDibujar) {
+    const cardModal = document.createElement("div");
+    cardModal.setAttribute("class", "modal__container");
+    cardModal.innerHTML = `<p id="cpmax">${
+      "MAX-CP: " + pokemon.stats["max-cp"]
+    }</p>
+    <h3 class="nombrePokemonBusqueda" id="nombrepokemon">${pokemon.name}</h3>
+    <img id="imagenpokemon" src="${pokemon.img}"/> 
+    <a href="#" class="modal__close">x</a>`;
+
+    dataModalPokemon.append(cardModal);
+  }
+}
+pokemonModalCreator(data.pokemon);
+
+//Modal y muestre data
+const openModals = document.querySelectorAll(".buttonMore");
+const modal = document.querySelector(".modal");
+
+openModals.forEach((openModal) => {
+  openModal.addEventListener("click", (e) => {
+    e.preventDefault();
+    const buttonId = e.target.classList[1].split("-")[1]; //Se extrae el numero del Pokemon utilizando el metodo split('-')
+    const pokemonData = data.pokemon.find((pokemon) => pokemon.num === buttonId);
+    pokemonModalCreator([pokemonData]);
+    modal.classList.add("modal--show");
+  });
+});
+
+//Para que se cierre la ventana
+//si encuentra la clase modal__close que es del boton de cerrar, entonces se cierra 
+dataModalPokemon.addEventListener("click", (e) => { 
+  e.preventDefault();
+  modal.classList.remove("modal--show");
 });
