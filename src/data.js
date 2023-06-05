@@ -35,3 +35,14 @@ export const sortData = (data, sortBy, sortOrder) => {
     });
   }
 };
+
+//Calculo agregado EPS
+export const calculateEps = (attack) => {
+  const result = attack.map((obj) => {
+    const energy = Number(obj.energy);
+    const time = Number(obj['move-duration-seg']);
+    const eps = Math.round(energy / time);
+    return eps;
+  });
+  return result;
+};

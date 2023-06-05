@@ -1,4 +1,4 @@
-import { filterTipo, sortData } from "./data.js";
+import { filterTipo, sortData, calculateEps } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
 //Mostrar Data
@@ -15,7 +15,6 @@ function pokemonCardsCreator(pokemonesADibujar) {
     <h3 class="nombrePokemonBusqueda" id="nombrepokemon">${pokemon.name}</h3>
     <img id="imagenpokemon" src="${pokemon.img}"/> 
     <p id="tipopokemon">${pokemon.type}</p>
-    <p id="aboutpokemon">${pokemon.about}</p>
     <button class="buttonMore" id="buttonMoreInfo">Estadísticas</button>`;
 
     const button = card.querySelector(".buttonMore");
@@ -51,7 +50,7 @@ userSelection.addEventListener("change", function () {
   const optionsType = userSelection.value;
   const filteredData = filterTipo(data.pokemon, optionsType);
 
-  console.log('filteredData', filteredData);
+  console.log("filteredData", filteredData);
 
   pokemonCardsCreator(filteredData);
 });
@@ -83,11 +82,15 @@ function pokemonModalCreator(pokemonesModalDibujar) {
   for (const pokemon of pokemonesModalDibujar) {
     const cardModal = document.createElement("div");
     cardModal.setAttribute("class", "modal__container");
-    cardModal.innerHTML = `<p id="cpmax">${
-      "MAX-CP: " + pokemon.stats["max-cp"]
-    }</p>
+    cardModal.innerHTML = `<p id="numPokemon">${pokemon.num}</p>
     <h3 class="nombrePokemonBusqueda" id="nombrepokemon">${pokemon.name}</h3>
     <img id="imagenpokemon" src="${pokemon.img}"/> 
+    <p id="aboutpokemon">${pokemon.about}</p>
+    <h2 class="attackTitle">Quick-Move</h2>
+    <p id="attackName">${pokemon["quick-move"].name}</p>
+    <p id="attackEnergy">${pokemon["quick-move"].energy}</p>
+    
+    <div>${calculateEps(pokemon["quick-move"])}</div>
     <a href="#" class="modal__close">x</a>`;
 
     dataModalPokemon.append(cardModal);
@@ -103,15 +106,17 @@ openModals.forEach((openModal) => {
   openModal.addEventListener("click", (e) => {
     e.preventDefault();
     const buttonId = e.target.classList[1].split("-")[1]; //Se extrae el numero del Pokemon utilizando el metodo split('-')
-    const pokemonData = data.pokemon.find((pokemon) => pokemon.num === buttonId);
+    const pokemonData = data.pokemon.find(
+      (pokemon) => pokemon.num === buttonId
+    );
     pokemonModalCreator([pokemonData]);
     modal.classList.add("modal--show");
   });
 });
 
 //Para que se cierre la ventana
-//si encuentra la clase modal__close que es del boton de cerrar, entonces se cierra 
-dataModalPokemon.addEventListener("click", (e) => { 
+//si encuentra la clase modal__close que es del boton de cerrar, entonces se cierra
+dataModalPokemon.addEventListener("click", (e) => {
   e.preventDefault();
   modal.classList.remove("modal--show");
 });
