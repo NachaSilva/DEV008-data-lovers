@@ -1,274 +1,297 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400&family=Secular+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400&family=Secular+One&display=swap");
 
 /*index*/
-.body{
-    background-color: #0F224A;
+.body {
+  background-color: #3c5aa6;
+  margin:0;
+  padding:0
 }
 
 .header {
-    display: flex;
-    justify-content: left;
-    width: 100%;
-    height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+  height: 230px;
+  background-color: #3c5aa6;
+  padding: 16px 0px;
 }
 
-.header_contenido{
-    height: 100%;
-    width: 150px;
-    padding: 7px 0 0 7px;
-    display: flex;
-    align-items: center;
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
 }
 
-.header_logo{
-    height: 100%;
-    width: 80%;
+.header_contenido {
+  height: 100%;
+  width: 150px;
+  padding: 7px 0 0 15px;
+  display: flex;
+  align-items: center;
 }
 
-.bienvenida{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.header_logo {
+  height: 100%;
+  width: 80%;
 }
 
-.titulo{
-    color: white;
-    font-family: 'Secular One', sans-serif;
+.bienvenida {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.subtitulo{
-    color: white;
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: 300;
+.titulo {
+  color: white;
+  font-family: "Secular One", sans-serif;
 }
 
-.material-symbols-outlined{
-color: white;
+.subtitulo {
+  color: white;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 300;
 }
 
-.pokeespacio{
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.material-symbols-outlined {
+  color: white;
 }
 
-#pokebola{
-    animation-name: animacionPokebola;
-    animation-duration: 2s;
-    position: relative;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+.pokeespacio {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#pokebola {
+  animation-name: animacionPokebola;
+  animation-duration: 2s;
+  position: relative;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 @keyframes animacionPokebola {
-    0%{top: 0};
-    25%{top: 55px}
-    50%{top: 0}
-    75%{top: 55px}
-    100%{top: 0}
-
+  0% {
+    top: 0;
+  }
+  25% {
+    top: 55px;
+  }
+  50% {
+    top: 0;
+  }
+  75% {
+    top: 55px;
+  }
+  100% {
+    top: 0;
+  }
 }
 
 /*Home*/
-.buscador{
-    display: flex;
-    justify-content: center;
+
+.buscador {
+  display: flex;
+  justify-content: center;
 }
 
-.input_nombre{
-    height: 40px;
-    width: 300px;
-    border-radius: 20px;
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight:bold;
-    text-align: center;
-    font-size: 1.2rem;
+.input_nombre {
+  height: 40px;
+  width: 300px;
+  border-radius: 20px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
-.filtros{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.filtro_uno{
-    margin: 0;
-    margin-top: 30px;
+.filtro_uno {
+  margin: 0;
+  margin-top: 30px;
 }
 
-.filtros_campo_uno{
-    height: 40px;
-    width: 300px;
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight:bold;
-    font-size: 1.2rem;
+.filtros_campo_uno {
+  height: 40px;
+  width: 300px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-.filtro_dos{
-    margin: 0;
-    margin-top: 30px;
+.filtro_dos {
+  margin: 0;
+  margin-top: 30px;
 }
 
-.filtros_campo_dos{
-    height: 40px;
-    width: 300px;
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight:bold;
-   font-size: 1.2rem;
+.filtros_campo_dos {
+  height: 40px;
+  width: 300px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 /*cards*/
-#cartaPokemon{
-    width: 350px;
-    height: 450px;
-    border: black;
-    background-color: white;
-    padding: 5px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.datospokemon{
-    display: none !important;
+#cartaPokemon {
+  width: 293px;
+  height: 504px;
+  background-image: url(./img/celCarta2.png);
+  object-fit: cover;
+  padding: 5px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
+#cartaPokemon:hover {
+    transform: translateY(-20px);
+    box-shadow: -7px -6px 89px -34px rgba(224,217,217,0.75);
+  }
 
-#datos{
+.datospokemon {
+  display: none !important;
+}
+
+#datos {
+  display: flex;
+  justify-content: center;
+  margin-top: 340px;
+}
+
+#datospokemon {
+  width: 80%;
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr;*/
+  grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+  grid-gap: 40px;
+  justify-content: center;
+}
+
+#cpmax {
+  text-align: center;
+  font-family: "Secular One", sans-serif;
+}
+
+#nombrepokemon {
+  text-align: center;
+  font-family: "Secular One", sans-serif;
+}
+
+#imagenpokemon {
+  display: block;
+  margin: auto;
+}
+#tipopokemon {
+  text-align: center;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 400;
+}
+
+#aboutpokemon {
+  text-align: center;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 300;
+}
+
+#buttonMoreInfo {
+  /*margin-left: 50%;*/
+  /*transform: translateX(-50%);*/
+  border-radius: 20px;
+  height: 30px;
+}
+
+.modal {
+  position: fixed; /*para que se fije a la pagina*/
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd; /*transparencia*/
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  /* --transform: translateY(-100vh);*/
+  /*--transition: transform .6s;*/
+}
+
+.modal--show {
+  opacity: 1;
+  pointer-events: unset; /* con esto hace que no se bloqueen las otras opciones*/
+  transition: opacity 0.6s; /*es para que abra con transición y no de golpe*/
+  --transform: translateY(0);
+  --transition: transform 0.8s 0.8s;
+}
+
+.modal__container {
+  margin: auto;
+  width: 90%;
+  max-width: 600px; /*contenido más pequeño*/
+  max-height: 90%; /*limitar contenido*/
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 3em 2.5em;
+  display: grid;
+  gap: 1em;
+  place-items: center; /*centrar los elementos de la card*/
+  grid-auto-columns: 100%;
+  transform: var(--transform);
+  transition: var(--transition);
+}
+
+.modal__close {
+  text-decoration: none;
+  color: #fff;
+  background-color: #f26250;
+  padding: 1em 3em;
+  border: 1px solid;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  transition: background-color 0.3s;
+}
+
+.modal__close:hover {
+  color: #f26250;
+  background-color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  .filtros {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    margin-top: 40px;  
-    
-}
-
-#datospokemon{
-    width: 80%;
-    display: grid;
-   /* grid-template-columns: 1fr 1fr 1fr;*/
-   grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
-   grid-gap: 40px;
-   justify-content: center;
-}
-
-#cpmax{
-    text-align: center;
-    font-family: 'Secular One', sans-serif;
-}
-
-#nombrepokemon{
-    text-align: center;
-    font-family: 'Secular One', sans-serif;
-}
-
-#imagenpokemon{
-    display: block;
-    margin: auto;
-}
-#tipopokemon{
-    text-align: center;
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: 400;
-}
-
-#aboutpokemon{
-    text-align: center; 
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: 300;
-}
-
-#buttonMoreInfo{
-    /*margin-left: 50%;*/
-    /*transform: translateX(-50%);*/
-    border-radius: 20px;
-    height: 30px;
-}
-
-.modal{
-    position: fixed; /*para que se fije a la pagina*/
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #111111bd; /*transparencia*/
-    display: flex;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .5s;
-   /* --transform: translateY(-100vh);*/
-    /*--transition: transform .6s;*/
-}
-
-.modal--show{
-    opacity: 1;
-    pointer-events: unset; /* con esto hace que no se bloqueen las otras opciones*/
-    transition: opacity .6s; /*es para que abra con transición y no de golpe*/
-    --transform: translateY(0);
-    --transition: transform .8s .8s;
-}
-
-.modal__container{
-    margin: auto;
-    width: 90%;
-    max-width: 600px; /*contenido más pequeño*/
-    max-height: 90%; /*limitar contenido*/
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 3em 2.5em;
-    display: grid;
-    gap: 1em;
-    place-items: center; /*centrar los elementos de la card*/
-    grid-auto-columns: 100%;
-    transform: var(--transform);
-    transition:var(--transition);
-}
-
-.modal__close{
-    text-decoration: none;
-    color: #fff;
-    background-color: #F26250;
-    padding: 1em 3em;
-    border: 1px solid ;
-    border-radius: 6px;
-    display: inline-block;
-    font-weight: 300;
-    transition: background-color .3s;
-}
-
-.modal__close:hover{
-    color: #F26250;
-    background-color: #fff;
-}
-
-
-
-
-@media only screen and (min-width: 768px){
-    .filtros {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-top: 40px;
-    }
-    .filtro_uno{
-        margin: 0px 50px 0px 50px;
-    }
-    .filtro_dos{
-        margin: 0px 50px 0px 50px; 
-    }
-    .filtros_campo_uno{
-        font-size: 1.2rem;
-    }
-    .filtros_campo_dos{
-        font-size: 1.2rem; 
-    }
-    .input_nombre{
-        font-size: 1.2rem;
-        height: 40px;
-        width: 500px;
-    }
+    margin-top: 40px;
+  }
+  .filtro_uno {
+    margin: 0px 50px 0px 50px;
+  }
+  .filtro_dos {
+    margin: 0px 50px 0px 50px;
+  }
+  .filtros_campo_uno {
+    font-size: 1.2rem;
+  }
+  .filtros_campo_dos {
+    font-size: 1.2rem;
+  }
+  .input_nombre {
+    font-size: 1.2rem;
+    height: 40px;
+    width: 500px;
+  }
 }
 
 /*colores opciones*/
@@ -276,5 +299,3 @@ color: white;
 background: #78C850;
 cursor: pointer;
 }*/
-
-
