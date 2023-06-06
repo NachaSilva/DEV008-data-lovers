@@ -50,7 +50,6 @@ userSelection.addEventListener("change", function () {
   const optionsType = userSelection.value;
   const filteredData = filterTipo(data.pokemon, optionsType);
 
-  console.log("filteredData", filteredData);
 
   pokemonCardsCreator(filteredData);
 });
