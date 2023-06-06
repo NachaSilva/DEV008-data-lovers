@@ -18,6 +18,18 @@
   z-index: 1;
 }
 
+.header_index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 230px;
+  background-color: #3c5aa6;
+  padding: 16px 0px;
+  z-index: 1;
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -32,9 +44,17 @@
   align-items: center;
 }
 
+.header_contenido_index {
+  height: 100%;
+  width: 250px;
+  display: flex;
+  align-items: center;
+}
+
 .header_logo {
   height: 100%;
   width: 80%;
+  margin-left: 20px;
 }
 
 .bienvenida {
@@ -114,6 +134,8 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
 .filtro_uno {
@@ -283,7 +305,7 @@
   font-family: "Secular One", sans-serif;
 }
 #attackGroup {
-  background-color: #37796C;
+  background-color: #37796c;
   color: white;
   display: flex;
   flex-direction: row;
@@ -302,7 +324,7 @@
   font-family: "Red Hat Display", sans-serif;
   font-weight: 400;
 }
-#attackNames{
+#attackNames {
   display: flex;
   flex-direction: column;
 }
@@ -332,6 +354,19 @@
   }
 }
 
+@media only screen and (max-width: 700px) {
+  .bienvenida {
+    text-align: center;
+  }
+
+  .header{
+    align-items: center;
+  }
+  .header_contenido{
+    margin-bottom: 20px;
+
+  }
+}
 /*colores opciones*/
 /*.grass{
 background: #78C850;
