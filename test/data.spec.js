@@ -1,7 +1,6 @@
 import { filterTipo, anotherExample } from "../src/data.js";
 
 describe("filterTipo", () => {
-
   it("returns `grass`", () => {
     const dataTypes = [
       {

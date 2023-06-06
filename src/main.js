@@ -50,7 +50,6 @@ userSelection.addEventListener("change", function () {
   const optionsType = userSelection.value;
   const filteredData = filterTipo(data.pokemon, optionsType);
 
-
   pokemonCardsCreator(filteredData);
 });
 
@@ -75,20 +74,19 @@ userSelectionOrder.addEventListener("change", function () {
 //Mostrar Data Modal
 const dataModalPokemon = document.getElementById("dataModal");
 const obtainNames = (attack) => {
-  const names = attack.map(name => name.name);
+  const names = attack.map((name) => name.name);
   return names;
 };
 
 const obtainEnergy = (attack) => {
-  const energy = attack.map(energy => energy.energy);
+  const energy = attack.map((energy) => energy.energy);
   return energy;
 };
 
 const obtainTime = (attack) => {
-  const time = attack.map(time => time["move-duration-seg"]);
+  const time = attack.map((time) => time["move-duration-seg"]);
   return time;
 };
-
 
 function pokemonModalCreator(pokemonesModalDibujar) {
   dataModalPokemon.innerHTML = "";
@@ -100,15 +98,20 @@ function pokemonModalCreator(pokemonesModalDibujar) {
     <h3 class="nombrePokemonBusqueda" id="nombrepokemon">${pokemon.name}</h3>
     <img id="imagenpokemon" src="${pokemon.img}"/> 
     <p id="aboutpokemon">${pokemon.about}</p>
-    <h2 class="attackTitle">Quick-Move</h2>
+    <h2 id="attackTitle">Quick-Move</h2>
+    <div id="attackGroup">
     <p id="attackInfo">Attack</p>
-    <div>${(obtainNames(pokemon['quick-move']))}</div>
     <p id="attackInfo">Energy</p>
-    <div id="attackEnergy">${(obtainEnergy(pokemon['quick-move']))}</div>
     <p id="attackInfo">Time</p>
-    <div id="attackTime">${(obtainTime(pokemon['quick-move']))}</div>
     <p id="attackInfo">EPS</p>
-    <div>${calculateEps(pokemon["quick-move"])}</div>
+    </div>
+    <div id="attackValues">
+    <div id="attackNames">${obtainNames(pokemon["quick-move"])}</div>
+    <div id="attackEnergy">${obtainEnergy(pokemon["quick-move"])}</div>
+    <div id="attackTime">${obtainTime(pokemon["quick-move"])}</div>
+    <div id="totalEps">${calculateEps(pokemon["quick-move"])}</div>
+    </div>
+    
     <a href="#" class="modal__close">x</a>`;
 
     dataModalPokemon.append(cardModal);
