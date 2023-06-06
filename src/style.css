@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400&family=Secular+One&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Red+Hat+Display:wght@300&display=swap");
 /*index*/
 .body {
   background-color: #3c5aa6;
@@ -15,6 +15,7 @@
   height: 230px;
   background-color: #3c5aa6;
   padding: 16px 0px;
+  z-index: 1;
 }
 
 .sticky {
@@ -143,9 +144,9 @@
 
 /*cards*/
 #cartaPokemon {
-  width: 293px;
-  height: 504px;
-  background-image: url(./img/celCarta2.png);
+  width: 300px;
+  height: auto;
+  background-color: white;
   object-fit: cover;
   padding: 5px;
   border-radius: 30px;
@@ -173,10 +174,10 @@
 #datospokemon {
   width: 80%;
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr;*/
   grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
   grid-gap: 40px;
   justify-content: center;
+  justify-items: center;
 }
 
 #cpmax {
@@ -186,12 +187,15 @@
 
 #nombrepokemon {
   text-align: center;
-  font-family: "Secular One", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
 }
 
 #imagenpokemon {
   display: block;
   margin: auto;
+  background-image: url(./img/blob.svg);
+  background-repeat: no-repeat;
 }
 #tipopokemon {
   text-align: center;
@@ -206,13 +210,16 @@
 }
 
 #buttonMoreInfo {
-  /*margin-left: 50%;*/
-  /*transform: translateX(-50%);*/
-  border-radius: 20px;
+  background-color: #D5A100;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  border-radius: 12px;
   height: 30px;
 }
 
 .modal {
+  z-index: 5;
   position: fixed; /*para que se fije a la pagina*/
   top: 0;
   left: 0;
@@ -236,6 +243,9 @@
 }
 
 .modal__container {
+  background-image: url(./img/pokemonModalFondo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: auto;
   width: 90%;
   max-width: 600px; /*contenido más pequeño*/
