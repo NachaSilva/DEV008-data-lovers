@@ -75,6 +75,21 @@ userSelectionOrder.addEventListener("change", function () {
 
 //Mostrar Data Modal
 const dataModalPokemon = document.getElementById("dataModal");
+const obtainNames = (attack) => {
+  const names = attack.map(name => name.name);
+  return names;
+};
+
+const obtainEnergy = (attack) => {
+  const energy = attack.map(energy => energy.energy);
+  return energy;
+};
+
+const obtainTime = (attack) => {
+  const time = attack.map(time => time["move-duration-seg"]);
+  return time;
+};
+
 
 function pokemonModalCreator(pokemonesModalDibujar) {
   dataModalPokemon.innerHTML = "";
@@ -87,9 +102,13 @@ function pokemonModalCreator(pokemonesModalDibujar) {
     <img id="imagenpokemon" src="${pokemon.img}"/> 
     <p id="aboutpokemon">${pokemon.about}</p>
     <h2 class="attackTitle">Quick-Move</h2>
-    <p id="attackName">${pokemon["quick-move"].name}</p>
-    <p id="attackEnergy">${pokemon["quick-move"].energy}</p>
-    
+    <p id="attackInfo">Attack</p>
+    <div>${(obtainNames(pokemon['quick-move']))}</div>
+    <p id="attackInfo">Energy</p>
+    <div id="attackEnergy">${(obtainEnergy(pokemon['quick-move']))}</div>
+    <p id="attackInfo">Time</p>
+    <div id="attackTime">${(obtainTime(pokemon['quick-move']))}</div>
+    <p id="attackInfo">EPS</p>
     <div>${calculateEps(pokemon["quick-move"])}</div>
     <a href="#" class="modal__close">x</a>`;
 
