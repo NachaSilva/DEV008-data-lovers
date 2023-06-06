@@ -1,9 +1,3 @@
-// estas funciones son de ejemplo
-
-export const anotherExample = () => {
-  return "OMG";
-};
-
 export const filterTipo = (data, optionsType) => {
   const tipoFiltro = data.filter((element) =>
     element.type.includes(optionsType)
@@ -12,7 +6,7 @@ export const filterTipo = (data, optionsType) => {
 };
 
 export const sortData = (data, sortBy, sortOrder) => {
-  const arrayNewData =  data.slice();
+  const arrayNewData = data.slice();
   if (sortOrder === "De Mayor a Menor") {
     return arrayNewData.sort((a, b) => {
       if (parseInt(a.stats[sortBy]) > parseInt(b.stats[sortBy])) {
@@ -40,7 +34,7 @@ export const sortData = (data, sortBy, sortOrder) => {
 export const calculateEps = (attack) => {
   const result = attack.map((obj) => {
     const energy = Number(obj.energy);
-    const time = Number(obj['move-duration-seg']);
+    const time = Number(obj["move-duration-seg"]);
     const eps = Math.round(energy / time);
     return eps;
   });
