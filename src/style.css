@@ -3,8 +3,8 @@
 /*index*/
 .body {
   background-color: #3c5aa6;
-  margin:0;
-  padding:0
+  margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -21,7 +21,7 @@
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%
+  width: 100%;
 }
 
 .header_contenido {
@@ -153,13 +153,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 #cartaPokemon:hover {
-    transform: translateY(-20px);
-    box-shadow: -7px -6px 89px -34px rgba(224,217,217,0.75);
-  }
+  transform: translateY(-20px);
+  box-shadow: -7px -6px 89px -34px rgba(224, 217, 217, 0.75);
+}
 
 .datospokemon {
   display: none !important;
@@ -187,7 +186,7 @@
 
 #nombrepokemon {
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
 }
 
@@ -210,9 +209,9 @@
 }
 
 #buttonMoreInfo {
-  background-color: #D5A100;
+  background-color: #d5a100;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   border: none;
   border-radius: 12px;
   height: 30px;
@@ -278,6 +277,35 @@
   background-color: #fff;
 }
 
+/* info dentro del modal */
+
+#attackTitle {
+  font-family: "Secular One", sans-serif;
+}
+#attackGroup {
+  background-color: #37796C;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-around;
+}
+
+#attackInfo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+#attackValues {
+  display: flex;
+  flex-direction: row;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 400;
+}
+#attackNames{
+  display: flex;
+  flex-direction: column;
+}
 @media only screen and (min-width: 768px) {
   .filtros {
     display: flex;
