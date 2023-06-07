@@ -2,6 +2,13 @@ import { filterTipo, sortData, calculateEps } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
 //Mostrar Data
+const TypeOfPokemon = (arrayOfType) => {
+  let imgEachPokemon = "";
+  arrayOfType.forEach((typeElement) => {
+    imgEachPokemon += `<img src="img/iconos/${typeElement}.png" alt=" type pokemon"/>`;
+  });
+  return imgEachPokemon;
+};
 const pokemonContainer = document.getElementById("datospokemon");
 
 function pokemonCardsCreator(pokemonesADibujar) {
@@ -12,9 +19,9 @@ function pokemonCardsCreator(pokemonesADibujar) {
     card.setAttribute("id", "cartaPokemon");
     card.setAttribute("class", "filtroPokemon");
     card.innerHTML = `<p id="cpmax">${"MAX-CP: " + pokemon.stats["max-cp"]}</p>
-    <h3 class="nombrePokemonBusqueda" id="nombrepokemon">${pokemon.name}</h3>
+    <h3 class="nombrePokemonBusqueda">${pokemon.name}</h3>
     <img id="imagenpokemon" src="${pokemon.img}"/> 
-    <p id="tipopokemon">${pokemon.type}</p>
+    <div id="iconType">${TypeOfPokemon(pokemon.type)}</div>
     <button class="buttonMore" id="buttonMoreInfo">Estadísticas</button>`;
 
     const button = card.querySelector(".buttonMore");
@@ -32,13 +39,7 @@ pokemonInput.addEventListener("keyup", (e) => {
   if (e.target.matches("#input")) {
     if (e.key === "Escape") e.target.value = "";
     document.querySelectorAll(".filtroPokemon").forEach((pokemon) => {
-      //console.log(pokemon.getElementsByTagName("h3")[0].textContent.toLowerCase().includes(e.target.value.toLowerCase())? pokemon.classList.remove("datospokemon") : pokemon.classList.add("datospokemon"))
-      pokemon
-        .getElementsByTagName("h3")[0]
-        .textContent.toLowerCase()
-        .includes(e.target.value.toLowerCase())
-        ? pokemon.classList.remove("datospokemon")
-        : pokemon.classList.add("datospokemon");
+      pokemon.getElementsByTagName("h3")[0].textContent.toLowerCase().includes(e.target.value.toLowerCase())? pokemon.classList.remove("datospokemon"): pokemon.classList.add("datospokemon");
     });
   }
 });
@@ -94,9 +95,10 @@ function pokemonModalCreator(pokemonesModalDibujar) {
   for (const pokemon of pokemonesModalDibujar) {
     const cardModal = document.createElement("div");
     cardModal.setAttribute("class", "modal__container");
-    cardModal.innerHTML = `<p id="numPokemon">${pokemon.num}</p>
+    cardModal.innerHTML = `<div id="modalInfoCover">
+    <p id="numPokemon">${pokemon.num}</p>
     <h3 class="nombrePokemonBusqueda" id="nombrepokemon">${pokemon.name}</h3>
-    <img id="imagenpokemon" src="${pokemon.img}"/> 
+    <div id="imagenPokemonModal"><img src="${pokemon.img}"/></div>
     <p id="aboutpokemon">${pokemon.about}</p>
     <h2 id="attackTitle">Quick-Move</h2>
     <div id="attackGroup">
@@ -111,7 +113,7 @@ function pokemonModalCreator(pokemonesModalDibujar) {
     <div id="attackTime">${obtainTime(pokemon["quick-move"])}</div>
     <div id="totalEps">${calculateEps(pokemon["quick-move"])}</div>
     </div>
-    
+    </div>
     <a href="#" class="modal__close">x</a>`;
 
     dataModalPokemon.append(cardModal);

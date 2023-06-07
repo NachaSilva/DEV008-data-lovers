@@ -5,6 +5,7 @@ export const filterTipo = (data, optionsType) => {
   return tipoFiltro;
 };
 
+
 export const sortData = (data, sortBy, sortOrder) => {
   const arrayNewData = data.slice();
   if (sortOrder === "De Mayor a Menor") {
@@ -30,6 +31,8 @@ export const sortData = (data, sortBy, sortOrder) => {
   }
 };
 
+
+
 //Calculo agregado EPS
 export const calculateEps = (attack) => {
   const result = attack.map((obj) => {
@@ -39,4 +42,3 @@ export const calculateEps = (attack) => {
     return eps;
   });
   return result;
-};
