@@ -1,6 +1,7 @@
 import { filterTipo, sortData, calculateEps } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
 
+let openModals = "";
 //Mostrar Data
 const TypeOfPokemon = (arrayOfType) => {
   let imgEachPokemon = "";
@@ -10,6 +11,60 @@ const TypeOfPokemon = (arrayOfType) => {
   return imgEachPokemon;
 };
 const pokemonContainer = document.getElementById("datospokemon");
+
+//Mostrar Data Modal
+const dataModalPokemon = document.getElementById("dataModal");
+const obtainNames = (attack) => {
+  let obtainAttackName = "<div>";
+  for (const attackObj of attack) {
+    const title = "<p>" + attackObj.name + "</p>";
+    obtainAttackName += title;
+  }
+  obtainAttackName += "</div>";
+  return obtainAttackName;
+};
+
+const obtainEnergy = (attack) => {
+  let obtainEnergyName = "<div class=datoModal>";
+  for (const nameObj of attack) {
+    const title = "<p>" + nameObj.energy + "</p>";
+    obtainEnergyName += title;
+  }
+  obtainEnergyName += "</div>";
+  return obtainEnergyName;
+};
+
+const obtainTime = (attack) => {
+  let obtainTimeName = "<div>";
+  for (const timeObj of attack) {
+    const title = "<p>" + timeObj.energy + "</p>";
+    obtainTimeName += title;
+  }
+  obtainTimeName += "</div>";
+  return obtainTimeName;
+};
+//Modal y muestre data
+const buttonHandler = () => {
+  const modal = document.querySelector(".modal");
+  openModals = document.querySelectorAll(".buttonMore");
+
+  openModals.forEach((openModal) => {
+    openModal.addEventListener("click", (e) => {
+      e.preventDefault();
+      const buttonId = e.target.classList[1].split("-")[1]; //Se extrae el numero del Pokemon utilizando el metodo split('-')
+      const pokemonData = data.pokemon.find(
+        (pokemon) => pokemon.num === buttonId
+      );
+      pokemonModalCreator([pokemonData]);
+      modal.classList.add("modal--show");
+    });
+  });
+
+  dataModalPokemon.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.classList.remove("modal--show");
+  });
+};
 
 function pokemonCardsCreator(pokemonesADibujar) {
   pokemonContainer.innerHTML = ""; //reemplazar el contenido de un elemento
@@ -29,6 +84,8 @@ function pokemonCardsCreator(pokemonesADibujar) {
 
     pokemonContainer.append(card);
   }
+  openModals = document.querySelectorAll(".buttonMore");
+  buttonHandler();
 }
 pokemonCardsCreator(data.pokemon);
 
@@ -39,7 +96,12 @@ pokemonInput.addEventListener("keyup", (e) => {
   if (e.target.matches("#input")) {
     if (e.key === "Escape") e.target.value = "";
     document.querySelectorAll(".filtroPokemon").forEach((pokemon) => {
-      pokemon.getElementsByTagName("h3")[0].textContent.toLowerCase().includes(e.target.value.toLowerCase())? pokemon.classList.remove("datospokemon"): pokemon.classList.add("datospokemon");
+      pokemon
+        .getElementsByTagName("h3")[0]
+        .textContent.toLowerCase()
+        .includes(e.target.value.toLowerCase())
+        ? pokemon.classList.remove("datospokemon")
+        : pokemon.classList.add("datospokemon");
     });
   }
 });
@@ -71,23 +133,6 @@ userSelectionOrder.addEventListener("change", function () {
 
   pokemonCardsCreator(sortOrderByCp);
 });
-
-//Mostrar Data Modal
-const dataModalPokemon = document.getElementById("dataModal");
-const obtainNames = (attack) => {
-  const names = attack.map((name) => name.name);
-  return names;
-};
-
-const obtainEnergy = (attack) => {
-  const energy = attack.map((energy) => energy.energy);
-  return energy;
-};
-
-const obtainTime = (attack) => {
-  const time = attack.map((time) => time["move-duration-seg"]);
-  return time;
-};
 
 function pokemonModalCreator(pokemonesModalDibujar) {
   dataModalPokemon.innerHTML = "";
@@ -121,25 +166,6 @@ function pokemonModalCreator(pokemonesModalDibujar) {
 }
 pokemonModalCreator(data.pokemon);
 
-//Modal y muestre data
-const openModals = document.querySelectorAll(".buttonMore");
-const modal = document.querySelector(".modal");
-
-openModals.forEach((openModal) => {
-  openModal.addEventListener("click", (e) => {
-    e.preventDefault();
-    const buttonId = e.target.classList[1].split("-")[1]; //Se extrae el numero del Pokemon utilizando el metodo split('-')
-    const pokemonData = data.pokemon.find(
-      (pokemon) => pokemon.num === buttonId
-    );
-    pokemonModalCreator([pokemonData]);
-    modal.classList.add("modal--show");
-  });
-});
-
 //Para que se cierre la ventana
 //si encuentra la clase modal__close que es del boton de cerrar, entonces se cierra
-dataModalPokemon.addEventListener("click", (e) => {
-  e.preventDefault();
-  modal.classList.remove("modal--show");
-});
+buttonHandler();
