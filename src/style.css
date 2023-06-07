@@ -407,8 +407,6 @@
   }
 }
 
-=======
-}
 
 .header_index {
   display: flex;
@@ -746,7 +744,7 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 700px){
   .bienvenida {
     text-align: center;
   }
@@ -756,17 +754,12 @@
   }
   .header_contenido {
     margin-bottom: 20px;
-
+  }
   .header{
     align-items: center;
   }
   .header_contenido{
     margin-bottom: 20px;
 
-  }
-}
-/*colores opciones*/
-/*.grass{
-background: #78C850;
-cursor: pointer;
-}*/
+  }}
+

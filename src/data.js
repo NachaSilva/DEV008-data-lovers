@@ -42,3 +42,4 @@ export const calculateEps = (attack) => {
     return eps;
   });
   return result;
+}
