@@ -1,8 +1,6 @@
 // estas funciones son de ejemplo
 
-export const anotherExample = () => {
-  return "OMG";
-};
+
 
 export const filterTipo = (data, optionsType) => {
   const tipoFiltro = data.filter((element) =>
@@ -10,6 +8,7 @@ export const filterTipo = (data, optionsType) => {
   );
   return tipoFiltro;
 };
+
 
 export const sortData = (data, sortBy, sortOrder) => {
   const arrayNewData =  data.slice();
@@ -36,6 +35,8 @@ export const sortData = (data, sortBy, sortOrder) => {
   }
 };
 
+
+
 //Calculo agregado EPS
 export const calculateEps = (attack) => {
   const result = attack.map((obj) => {
@@ -45,4 +46,7 @@ export const calculateEps = (attack) => {
     return eps;
   });
   return result;
+  
 };
+
+// funcion para combinar filtros

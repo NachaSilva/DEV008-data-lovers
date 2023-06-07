@@ -217,7 +217,7 @@
   margin: 10px;
 }
 
-#iconType img{
+#iconType img {
   width: 40px;
 }
 
@@ -282,7 +282,7 @@
 .modal__close {
   text-decoration: none;
   color: #fff;
-  background-color: #CE2211;
+  background-color: #ce2211;
   height: 30px;
   width: 30px;
   border-radius: 24px;
@@ -293,16 +293,17 @@
   right: 0;
   top: 0;
   text-align: center;
+  margin: 7px;
 }
 
 .modal__close:hover {
-  color: #CE2211;
+  color: #ce2211;
   background-color: #fff;
 }
 
 /* info dentro del modal */
 #modalInfoCover {
-  max-height: 700px;
+  height: 550px;
   background-color: white;
   border-radius: 2.4em;
   margin: 0.3em;
@@ -317,6 +318,7 @@
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
+  font-size: 20px;
 }
 
 #imagenPokemonModal {
@@ -327,8 +329,22 @@
   margin-top: 0.5em;
   text-align: center;
 }
+
+#imagenPokemonModal img {
+  background-image: url(./img/blobModal.svg);
+  background-repeat: no-repeat;
+}
 #attackTitle {
   font-family: "Secular One", sans-serif;
+  width: 80%;
+  height: 30px;
+  background: none;
+  border-radius: 10px;
+  border: dotted;
+  border-color: #919191;
+  text-align: center;
+  margin-bottom: 10px;
+  
 }
 #attackGroup {
   background-color: #4dad5b;
@@ -357,8 +373,7 @@
   width: 80%;
   justify-content: space-around;
   align-items: center;
-  background-color: #1C4CBD
-  ;
+  background-color: #e6bc2f;
   border-radius: 10px;
   margin-top: 4px;
 }
@@ -397,12 +412,11 @@
     text-align: center;
   }
 
-  .header{
+  .header {
     align-items: center;
   }
-  .header_contenido{
+  .header_contenido {
     margin-bottom: 20px;
-
   }
 }
 /*colores opciones*/

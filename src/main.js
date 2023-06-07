@@ -3,7 +3,7 @@ import data from "./data/pokemon/pokemon.js";
 
 //Mostrar Data
 const TypeOfPokemon = (arrayOfType) => {
-  let imgEachPokemon = '';
+  let imgEachPokemon = "";
   arrayOfType.forEach((typeElement) => {
     imgEachPokemon += `<img src="img/iconos/${typeElement}.png" alt=" type pokemon"/>`;
   });
@@ -39,13 +39,7 @@ pokemonInput.addEventListener("keyup", (e) => {
   if (e.target.matches("#input")) {
     if (e.key === "Escape") e.target.value = "";
     document.querySelectorAll(".filtroPokemon").forEach((pokemon) => {
-      //console.log(pokemon.getElementsByTagName("h3")[0].textContent.toLowerCase().includes(e.target.value.toLowerCase())? pokemon.classList.remove("datospokemon") : pokemon.classList.add("datospokemon"))
-      pokemon
-        .getElementsByTagName("h3")[0]
-        .textContent.toLowerCase()
-        .includes(e.target.value.toLowerCase())
-        ? pokemon.classList.remove("datospokemon")
-        : pokemon.classList.add("datospokemon");
+      pokemon.getElementsByTagName("h3")[0].textContent.toLowerCase().includes(e.target.value.toLowerCase())? pokemon.classList.remove("datospokemon"): pokemon.classList.add("datospokemon");
     });
   }
 });
