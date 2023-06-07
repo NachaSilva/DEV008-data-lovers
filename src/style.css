@@ -16,6 +16,7 @@
   background-color: #3c5aa6;
   padding: 16px 0px;
   z-index: 1;
+  align-items: center;
 }
 
 .sticky {
@@ -28,6 +29,12 @@
   height: 100%;
   width: 150px;
   padding: 7px 0 0 15px;
+  display: flex;
+  align-items: center;
+}
+.header_contenido_index {
+  height: 100%;
+  width: 250px;
   display: flex;
   align-items: center;
 }
