@@ -103,7 +103,7 @@ function pokemonModalCreator(pokemonesModalDibujar) {
     <h2 id="attackTitle">Quick-Move</h2>
     <div id="attackGroup">
     <p id="attackInfo">Attack</p>
-    <p id="attackInfo">Energia</p>
+    <p id="attackInfo">Energy</p>
     <p id="attackInfo">Time</p>
     <p id="attackInfo">EPS</p>
     </div>
