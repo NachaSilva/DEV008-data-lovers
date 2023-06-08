@@ -93,10 +93,10 @@ Este proyecto cuenta con 3 historias de usuario, que tienen como objetivo hacer 
   
   Luego del research, se desarrolla un prototipo de baja calidad con lápiz y papel donde colocamos las principales ideas que imaginamos en el proyecto, donde luego se desarrolla una fusión que se puede mostrar en Figma [aquí](https://www.figma.com/file/UScyGw3XaBn2wp063kscqe/Low-Prototype-Data-Lovers?type=design&t=N144o8PrZEcKNQ2n-0).
 
-  /assets/img/lowprototype.jpeg 
+  ![lowprototype](img/lowprototype.jpeg)
 
   Luego, se hicieron cambios en base a las historias de usuario, dejando como prototipo de alta fidelidad:
-  /assets/img/desktop.png
+  ![desktopsize](img/desktop.png)
   /assets/img/tabletmobile.png
 
   Puedes ver con mayor detalles el prototipo de alta fidelidad [aquí](https://www.figma.com/file/jOcDABLVVvg3UWZtTKaPDb/High-Prototype-Data-Lovers?type=design&node-id=0-1&t=Oh4NP6cl3LUJdkOz-0)
