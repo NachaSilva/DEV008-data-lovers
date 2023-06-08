@@ -118,6 +118,7 @@ Este proyecto cuenta con 3 historias de usuario, que tienen como objetivo hacer 
   Muestra del proyecto:
   ![](src/img/imagenindex.png)
   ![](src/img/imagenhomepng.png)
+  ![](src/img/imagenmodalhome.png)
 
 ## 8. Checklist
 
