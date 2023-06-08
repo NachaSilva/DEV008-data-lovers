@@ -93,11 +93,11 @@ Este proyecto cuenta con 3 historias de usuario, que tienen como objetivo hacer 
   
   Luego del research, se desarrolla un prototipo de baja calidad con lápiz y papel donde colocamos las principales ideas que imaginamos en el proyecto, donde luego se desarrolla una fusión que se puede mostrar en Figma [aquí](https://www.figma.com/file/UScyGw3XaBn2wp063kscqe/Low-Prototype-Data-Lovers?type=design&t=N144o8PrZEcKNQ2n-0).
 
-  ![lowprototype](img/lowprototype.jpeg)
+  ![lowprototype](src/img/lowprototype.jpeg)
 
   Luego, se hicieron cambios en base a las historias de usuario, dejando como prototipo de alta fidelidad:
-  ![desktopsize](img/desktop.png)
-  /assets/img/tabletmobile.png
+  ![desktopsize](src/img/desktop.png)
+  ![tabletmobile](src/img/tabletmobile.png)
 
   Puedes ver con mayor detalles el prototipo de alta fidelidad [aquí](https://www.figma.com/file/jOcDABLVVvg3UWZtTKaPDb/High-Prototype-Data-Lovers?type=design&node-id=0-1&t=Oh4NP6cl3LUJdkOz-0)
 
@@ -105,19 +105,19 @@ Este proyecto cuenta con 3 historias de usuario, que tienen como objetivo hacer 
 
   Luego de completar el proyecto, se realiza un test de usabilidad para probar la funcionalidad del sitio y ver mejoras en caso de profundizar en el proyecto. Se destaca en un buen entendimiento en el manejo de los filtros, visualización y relevancia de la data. Aunque se debe mejorar en detalles como que los nombres no comienzan en mayúscula y la paleta de colores. A continuación se muestran captura de los resultados:
   
-  /assets/img/resultadouno.png
-  /assets/img/resultadodos.png
-  /assets/img/resultadotres.png
-  /assets/img/resultadocuatro.png
-  /assets/img/resultadocinco.png
+  ![](src/img/resultadouno.png)
+  ![](src/img/resultadodos.png)
+  ![](src/img/resultadotres.png)
+  ![](src/img/resultadocuatro.png)
+  ![](src/img/resultadocinco.png)
 
 ## 7. Proyecto
 
   Para ver el proyecto final, puedes hacer click [aquí]()
 
   Muestra del proyecto:
-  /assets/img/imagenindex.png
-  /assets/img/imagenhomepng.png
+  ![](src/img/imagenindex.png)
+  ![](src/img/imagenhomepng.png)
 
 ## 8. Checklist
 
