@@ -1,0 +1,457 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400&family=Secular+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Red+Hat+Display:wght@300&display=swap");
+/*index*/
+.body {
+  background-color: #3c5aa6;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+  height: 230px;
+  background-color: #3c5aa6;
+  padding: 16px 0px;
+  z-index: 1;
+  align-items: center;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header_contenido {
+  height: 100%;
+  width: 150px;
+  padding: 7px 0 0 15px;
+  display: flex;
+  align-items: center;
+}
+.header_contenido_index {
+  height: 100%;
+  width: 250px;
+  display: flex;
+  align-items: center;
+}
+
+.header_logo {
+  height: 100%;
+  width: 80%;
+}
+
+.bienvenida {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo {
+  color: white;
+  font-family: "Secular One", sans-serif;
+}
+
+.subtitulo {
+  color: white;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 300;
+}
+
+.material-symbols-outlined {
+  color: white;
+}
+
+.pokeespacio {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#pokebola {
+  animation-name: animacionPokebola;
+  animation-duration: 2s;
+  position: relative;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes animacionPokebola {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: 55px;
+  }
+  50% {
+    top: 0;
+  }
+  75% {
+    top: 55px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+/*Home*/
+
+.buscador {
+  display: flex;
+  justify-content: center;
+}
+
+.input_nombre {
+  height: 40px;
+  width: 300px;
+  border-radius: 20px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filtro_uno {
+  margin: 0;
+  margin-top: 30px;
+}
+
+.filtros_campo_uno {
+  height: 40px;
+  width: 300px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.filtro_dos {
+  margin: 0;
+  margin-top: 30px;
+}
+
+.filtros_campo_dos {
+  height: 40px;
+  width: 300px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/*cards*/
+#cartaPokemon {
+  width: 300px;
+  height: auto;
+  background-color: white;
+  object-fit: cover;
+  padding: 5px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#cartaPokemon:hover {
+  transform: translateY(-20px);
+  box-shadow: -7px -6px 89px -34px rgba(224, 217, 217, 0.75);
+}
+
+.datospokemon {
+  display: none !important;
+}
+
+#datos {
+  display: flex;
+  justify-content: center;
+  margin-top: 340px;
+}
+
+#datospokemon {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+  grid-gap: 40px;
+  justify-content: center;
+  justify-items: center;
+}
+
+#cpmax {
+  text-align: center;
+  font-family: "Secular One", sans-serif;
+}
+
+.nombrePokemonBusqueda {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+#nombrepokemon {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  margin: 0px;
+}
+
+#imagenpokemon {
+  display: block;
+  margin: auto;
+  background-image: url(./img/blob.svg);
+  background-repeat: no-repeat;
+}
+#iconType {
+  display: flex;
+  height: 50px;
+  max-width: 100px;
+  margin: 10px;
+}
+
+#iconType img {
+  width: 40px;
+}
+
+#aboutpokemon {
+  text-align: center;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 300;
+}
+
+#buttonMoreInfo {
+  background-color: #d5a100;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  border: none;
+  border-radius: 12px;
+  height: 30px;
+}
+
+.modal {
+  z-index: 5;
+  position: fixed; /*para que se fije a la pagina*/
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd; /*transparencia*/
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  /* --transform: translateY(-100vh);*/
+  /*--transition: transform .6s;*/
+}
+
+.modal--show {
+  opacity: 1;
+  pointer-events: unset; /* con esto hace que no se bloqueen las otras opciones*/
+  transition: opacity 0.6s; /*es para que abra con transición y no de golpe*/
+  --transform: translateY(0);
+  --transition: transform 0.8s 0.8s;
+}
+
+.modal__container {
+  background-image: url(./img/pokemonModalFondo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  width: 90%;
+  max-width: 500px; /*contenido más pequeño*/
+  max-height: 90%; /*limitar contenido*/
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 2em 1.5em;
+  display: grid;
+  gap: 1em;
+  place-items: center; /*centrar los elementos de la card*/
+  grid-auto-columns: 100%;
+  transform: var(--transform);
+  transition: var(--transition);
+}
+
+.modal__close {
+  text-decoration: none;
+  color: #fff;
+  background-color: #ce2211;
+  height: 30px;
+  width: 30px;
+  border-radius: 24px;
+  font-weight: 300;
+  font-size: 20px;
+  transition: background-color 0.3s;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+  margin: 7px;
+}
+
+.modal__close:hover {
+  color: #ce2211;
+  background-color: #fff;
+}
+
+/* info dentro del modal */
+#modalInfoCover {
+  height: 550px;
+  background-color: white;
+  border-radius: 2.4em;
+  margin: 0.3em;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#numPokemon {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#imagenPokemonModal {
+  width: 300px;
+  height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+#imagenPokemonModal img {
+  background-image: url(./img/blobModal.svg);
+  background-repeat: no-repeat;
+}
+#attackTitle {
+  font-family: "Secular One", sans-serif;
+  width: 80%;
+  height: 30px;
+  background: none;
+  border-radius: 10px;
+  border: dotted;
+  border-color: #919191;
+  text-align: center;
+  margin-bottom: 10px;
+  
+}
+#attackGroup {
+  background-color: #4dad5b;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 30px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#attackInfo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: white;
+}
+
+#attackValues {
+  display: flex;
+  flex-direction: row;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 400;
+  min-height: 50px;
+  max-height: 110px;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e6bc2f;
+  border-radius: 10px;
+  margin-top: 4px;
+}
+#attackNames {
+  display: flex;
+  flex-direction: column;
+}
+
+#attackNames p{
+  margin: 2px;
+}
+
+#attackEnergy{
+  display: flex;
+  flex-direction: column;
+}
+
+#attackEnergy p{
+  margin: 2px;
+}
+#attackTime{
+  display: flex;
+  flex-direction: column;
+}
+#attackTime p{
+  margin: 2px;
+}
+
+#totalEps{
+  display: flex;
+  flex-direction: column;
+}
+#totalEps p{
+  margin: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+  .filtros {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .filtro_uno {
+    margin: 0px 50px 0px 50px;
+  }
+  .filtro_dos {
+    margin: 0px 50px 0px 50px;
+  }
+  .filtros_campo_uno {
+    font-size: 1.2rem;
+  }
+  .filtros_campo_dos {
+    font-size: 1.2rem;
+  }
+  .input_nombre {
+    font-size: 1.2rem;
+    height: 40px;
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 700px){
+  .bienvenida {
+    text-align: center;
+  }
+
+  .header {
+    align-items: center;
+  }
+  .header_contenido {
+    margin-bottom: 20px;
+  }
+  .header{
+    align-items: center;
+  }
+  .header_contenido{
+    margin-bottom: 20px;
+
+  }}
