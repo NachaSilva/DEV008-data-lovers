@@ -168,7 +168,7 @@ describe("calculateEps", () => {
     },
   ];
   it("retornar Eps", () => {
-    expect(calculateEps(dataEps)).toEqual([10, 10]);
+    expect(calculateEps(dataEps)).toEqual("<div><p>10</p><p>10</p></div>");
   });
 });
 
