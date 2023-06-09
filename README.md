@@ -113,7 +113,7 @@ Este proyecto cuenta con 3 historias de usuario, que tienen como objetivo hacer 
 
 ## 7. Proyecto
 
-  Para ver el proyecto final, puedes hacer click [aquí]()
+  Para ver el proyecto final, puedes hacer click [aquí](https://nachasilva.github.io/DEV008-data-lovers/index.html)
 
   Muestra del proyecto:
   ![](src/img/imagenindex.png)
